@@ -5,5 +5,9 @@
             app:startDestination="@id/fichesFragment">
 
     <fragment android:id="@+id/fichesFragment" android:name="ap.mobile.climamob.FichesFragment"
-              android:label="fragment_fiches" tools:layout="@layout/fragment_fiches"/>
+              android:label="fragment_fiches" tools:layout="@layout/fragment_fiches">
+        <action android:id="@+id/action_fichesFragment_to_listeFragment" app:destination="@id/listeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/listeFragment" android:name="ap.mobile.climamob.ListeFragment"
+              android:label="fragment_liste" tools:layout="@layout/fragment_liste"/>
 </navigation>

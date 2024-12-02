@@ -1,22 +1,17 @@
 package ap.mobile.climamob;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.navigation.NavDirections;
-import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FichesFragment#newInstance} factory method to
+ * Use the {@link ListeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FichesFragment extends Fragment {
+public class ListeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +22,7 @@ public class FichesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FichesFragment() {
+    public ListeFragment() {
         // Required empty public constructor
     }
 
@@ -37,11 +32,11 @@ public class FichesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FichesFragment.
+     * @return A new instance of fragment ListeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FichesFragment newInstance(String param1, String param2) {
-        FichesFragment fragment = new FichesFragment();
+    public static ListeFragment newInstance(String param1, String param2) {
+        ListeFragment fragment = new ListeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,25 +57,6 @@ public class FichesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fiches, container, false);
+        return inflater.inflate(R.layout.fragment_liste, container, false);
     }
-
-    @Override
-    public void onViewCreated (View view, Bundle savedInstanceState)
-    {
-        Button buttonToList = (Button) view.findViewById(R.id.buttonToList);
-        buttonToList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.w("ClimaMob", "vue liste");
-                Toast.makeText(getActivity(), "vue liste", Toast.LENGTH_SHORT).show();
-                NavDirections action = FichesFragmentDirections.actionFichesFragmentToListeFragment();
-                Navigation.findNavController(view).navigate(action);
-            }
-        });
-    }
-
-
-
-
 }
